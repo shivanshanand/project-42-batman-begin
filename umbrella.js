@@ -1,10 +1,10 @@
 class Umbrella{
     constructor(x,y,width,height){
-        /*var op={
+        var op={
             isStatic: true,
             density:0.2
-        } */
-        this.body=Bodies.rectangle(x,y,width,height);
+        } 
+        this.body=Bodies.rectangle(x,y,width,height,op);
      // this.radius= radius/2;
         this.width=width;
         this.height=height
