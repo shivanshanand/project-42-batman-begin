@@ -3,13 +3,20 @@ const World= Matter.World;
 const Bodies = Matter.Bodies;
 const Constraint = Matter.Constraint;
 
-var drops, boy;
+var drops, boy, boyImg;
 var maxDrops=100;
 
 function preload(){
 
-    
+    boyImg=loadImage("walk/walking_1.png");
 
+   /* boyImg=loadImage("walk/walking_2.png");
+    boyImg=loadImage("walk/walking_3.png");
+    boyImg=loadImage("walk/walking_4.png");
+    boyImg=loadImage("walk/walking_5.png");
+    boyImg=loadImage("walk/walking_6.png");
+    boyImg=loadImage("walk/walking_7.png");
+    boyImg=loadImage("walk/walking_8.png");  */
     
 }
 
@@ -19,7 +26,7 @@ function setup(){
     world = engine.world;
 
    // drops=new Drop(250,690,20,20);
-    boy=new Umbrella(250,500,20,20);
+    boy=new Umbrella(250,500,60,60);
 
 
    
