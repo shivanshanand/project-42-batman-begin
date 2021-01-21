@@ -9,10 +9,8 @@ class Drop{
         this.radius= radius/2;
         World.add(world,this.body);
 
-        this.drop=[];
     }
-
-
+    
     display(){
 
         push(); 
@@ -22,12 +20,6 @@ class Drop{
         ellipse(0,0, this.radius, this.radius); 
         pop();
 
-        for(var s=0;s<maxDrops;s++){
-            this.drop.push(new Drop(random(0,600),random(0,600)));
-        }
- 
-         if(this.body.position.y>height){
-            Matter.Body.setPosition(this.body,{x:random(0,600),y:random(0,600)});
-        }
+        
     }
 }
