@@ -1,25 +1,28 @@
 class Drop{
-    constructor(x,y,radius){
+    constructor(x,y){
         var op={
-            isStatic: false,
-            friction: 0.1,
-            density:0.4
+            friction: 0.001,
+            restitution:0.1
         }
-        this.body=Bodies.circle(x,y,radius/2,op);
-        this.radius= radius/2;
+        
+        this.body=Bodies.circle(x,y,5,op);
+       // this.radius= radius/2;
         World.add(world,this.body);
 
     }
-    
-    display(){
 
+    display(){
         push(); 
         translate(this.body.position.x, this.body.position.y ); 
         rotate(this.body.angle);
         ellipseMode(RADIUS);
-        ellipse(0,0, this.radius, this.radius); 
+        ellipse(0, 0, 5, 5); 
         pop();
+    }
 
-        
+    fall(){
+        if(this.body.position.y>height){
+            Matter.Body.setPosition(this.body,{x:random(0,400),y:random(0,400)});
+        }
     }
 }
