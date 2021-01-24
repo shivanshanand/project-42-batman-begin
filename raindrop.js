@@ -15,6 +15,8 @@ class Drop{
         push(); 
         translate(this.body.position.x, this.body.position.y ); 
         rotate(this.body.angle);
+        fill("white")
+        stroke("red")
         ellipseMode(RADIUS);
         ellipse(0, 0, 5, 5); 
         pop();
