@@ -6,6 +6,7 @@ const Constraint = Matter.Constraint;
 var drops, boy, thunder, boyImg, thunder1Img, thunder2Img, thunder3Img, thunder4Img;
 var maxDrops=100;
 
+
 drop=[];
 
 function preload(){
@@ -31,7 +32,7 @@ function setup(){
     engine = Engine.create();
     world  = engine.world;
 
-    boy=new Umbrella(250,600,110,210);
+    boy=new Umbrella(250,570);
 
     for(var s=0;s<maxDrops;s++){
         drop.push(new Drop(random(0,400),random(0,400)));
@@ -51,27 +52,34 @@ function draw(){
     } 
 
     spawnthunder();
+
+    drawSprites();
 }   
 
 function spawnthunder() {
     if(frameCount % 60 === 0) {
-      var thunder = createSprite(50,200,20,20);
-      thunder.x = random(50,600);
-      
-      //generate random thunder
-      var s = Math.round(random(1,4));
-      switch(s) {
-        case 1: thunder.addImage(thunder1Img);
-                break;
-        case 2: thunder.addImage(thunder2Img);
-                break;
-        case 3: thunder.addImage(thunder3Img);
-                break;
-        case 4: thunder.addImage(thunder4Img);
-                break;
-        default: break;
-      }
-      
-      thunder.scale = 0.7;
+        thunder = createSprite(50,20,20,20);
+        thunder.x = random(50,500);
+        
+        //generate random thunder
+        var s = Math.round(random(1,4));
+        switch(s) {
+          case 1: thunder.addImage(thunder1Img);
+                  break;
+          case 2: thunder.addImage(thunder2Img);
+                  break;
+          case 3: thunder.addImage(thunder3Img);
+                  break;
+          case 4: thunder.addImage(thunder4Img);
+                  break;
+          default: break;
+        }
+
+        thunder.scale = 0.5;
     }
-  }
+    else{
+        if(frameCount % 65===0){
+        thunder.visible=false;
+      }
+    }
+}
